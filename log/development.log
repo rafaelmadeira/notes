@@ -1,0 +1,167 @@
+  [1m[35mSQL (0.2ms)[0m  [1m[35mSET search_path TO public /*application='Napp'*/[0m
+  [1m[35m (151.2ms)[0m  [1m[35mCREATE DATABASE "napp_development" ENCODING = 'unicode' /*application='Napp'*/[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mSET search_path TO public /*application='Napp'*/[0m
+  [1m[35m (388.4ms)[0m  [1m[35mCREATE DATABASE "napp_test" ENCODING = 'unicode' /*application='Napp'*/[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mSET search_path TO public /*application='Napp'*/[0m
+  [1m[35m (376.8ms)[0m  [1m[35mCREATE DATABASE "napp_development" ENCODING = 'unicode' /*application='Napp'*/[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[35mSET search_path TO public /*application='Napp'*/[0m
+  [1m[35m (164.4ms)[0m  [1m[35mCREATE DATABASE "napp_test" ENCODING = 'unicode' /*application='Napp'*/[0m
+  [1m[35m (16.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY) /*application='Napp'*/[0m
+  [1m[35m (10.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='Napp'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6462892738385493480) /*application='Napp'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Napp'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Napp'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-01-06 19:24:24.460182', '2025-01-06 19:24:24.460184') RETURNING "key" /*application='Napp'*/[0m
+Migrating to CreateNotes (20250106192148)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='Napp'*/[0m
+  [1m[35m (20.2ms)[0m  [1m[35mCREATE TABLE "notes" ("id" bigserial primary key, "content" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='Napp'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250106192148') RETURNING "version" /*application='Napp'*/[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT /*application='Napp'*/[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(6462892738385493480) /*application='Napp'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Napp'*/[0m
+Started GET "/notes" for ::1 at 2025-01-06 16:25:16 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Napp'*/[0m
+Processing by NotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.erb within layouts/application
+  [1m[36mNote Load (138.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" /*action='index',application='Napp',controller='notes'*/[0m
+  ↳ app/views/notes/index.html.erb:8
+  Rendered notes/index.html.erb within layouts/application (Duration: 156.3ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 265.5ms | GC: 0.2ms)
+Completed 200 OK in 1367ms (Views: 139.6ms | ActiveRecord: 147.9ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/assets/application-bfcdf840.js" for ::1 at 2025-01-06 16:25:18 -0300
+Started GET "/assets/turbo.min-fae85750.js" for ::1 at 2025-01-06 16:25:18 -0300
+Started GET "/assets/stimulus.min-4b1e420e.js" for ::1 at 2025-01-06 16:25:18 -0300
+Started GET "/assets/controllers/index-ee64e1f1.js" for ::1 at 2025-01-06 16:25:18 -0300
+Started GET "/assets/controllers/application-3affb389.js" for ::1 at 2025-01-06 16:25:18 -0300
+Started GET "/assets/stimulus-loading-1fc53fe7.js" for ::1 at 2025-01-06 16:25:18 -0300
+Started GET "/assets/controllers/hello_controller-708796bd.js" for ::1 at 2025-01-06 16:25:18 -0300
+Started GET "/" for ::1 at 2025-01-06 16:25:19 -0300
+Processing by NotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.erb within layouts/application
+  [1m[36mNote Load (0.4ms)[0m  [1m[34mSELECT "notes".* FROM "notes" /*action='index',application='Napp',controller='notes'*/[0m
+  ↳ app/views/notes/index.html.erb:8
+  Rendered notes/index.html.erb within layouts/application (Duration: 38.2ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 39.3ms | GC: 0.2ms)
+Completed 200 OK in 452ms (Views: 39.5ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/" for ::1 at 2025-01-06 16:31:05 -0300
+Processing by NotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.erb within layouts/application
+  [1m[36mNote Load (0.4ms)[0m  [1m[34mSELECT "notes".* FROM "notes" /*action='index',application='Napp',controller='notes'*/[0m
+  ↳ app/views/notes/index.html.erb:28
+  Rendered notes/index.html.erb within layouts/application (Duration: 27.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 38.3ms | GC: 0.0ms)
+Completed 200 OK in 620ms (Views: 44.1ms | ActiveRecord: 14.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/notes" for ::1 at 2025-01-06 16:31:10 -0300
+Processing by NotesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "note"=>{"content"=>"Ok"}, "commit"=>"Create Note"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*action='create',application='Napp',controller='notes'*/[0m
+  ↳ app/controllers/notes_controller.rb:29:in `block in create'
+  [1m[36mNote Create (2.8ms)[0m  [1m[32mINSERT INTO "notes" ("content", "created_at", "updated_at") VALUES ('Ok', '2025-01-06 19:31:10.468309', '2025-01-06 19:31:10.468309') RETURNING "id" /*action='create',application='Napp',controller='notes'*/[0m
+  ↳ app/controllers/notes_controller.rb:29:in `block in create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT /*action='create',application='Napp',controller='notes'*/[0m
+  ↳ app/controllers/notes_controller.rb:29:in `block in create'
+Redirected to http://localhost:3000/notes
+Completed 302 Found in 404ms (ActiveRecord: 3.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/notes" for ::1 at 2025-01-06 16:31:10 -0300
+Processing by NotesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.erb within layouts/application
+  [1m[36mNote Load (0.4ms)[0m  [1m[34mSELECT "notes".* FROM "notes" /*action='index',application='Napp',controller='notes'*/[0m
+  ↳ app/views/notes/index.html.erb:28
+  Rendered notes/_note.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered notes/index.html.erb within layouts/application (Duration: 10.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | GC: 0.0ms)
+Completed 200 OK in 441ms (Views: 11.7ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/notes" for ::1 at 2025-01-06 16:31:16 -0300
+Processing by NotesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "note"=>{"content"=>"E agora"}, "commit"=>"Create Note"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*action='create',application='Napp',controller='notes'*/[0m
+  ↳ app/controllers/notes_controller.rb:29:in `block in create'
+  [1m[36mNote Create (2.2ms)[0m  [1m[32mINSERT INTO "notes" ("content", "created_at", "updated_at") VALUES ('E agora', '2025-01-06 19:31:17.336013', '2025-01-06 19:31:17.336013') RETURNING "id" /*action='create',application='Napp',controller='notes'*/[0m
+  ↳ app/controllers/notes_controller.rb:29:in `block in create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT /*action='create',application='Napp',controller='notes'*/[0m
+  ↳ app/controllers/notes_controller.rb:29:in `block in create'
+Redirected to http://localhost:3000/notes
+Completed 302 Found in 419ms (ActiveRecord: 2.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/notes" for ::1 at 2025-01-06 16:31:17 -0300
+Processing by NotesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.erb within layouts/application
+  [1m[36mNote Load (0.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" /*action='index',application='Napp',controller='notes'*/[0m
+  ↳ app/views/notes/index.html.erb:28
+  Rendered notes/_note.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered notes/index.html.erb within layouts/application (Duration: 3.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | GC: 0.0ms)
+Completed 200 OK in 425ms (Views: 4.4ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/notes" for ::1 at 2025-01-06 16:31:34 -0300
+Processing by NotesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "note"=>{"content"=>"what now"}, "commit"=>"Create Note"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*action='create',application='Napp',controller='notes'*/[0m
+  ↳ app/controllers/notes_controller.rb:29:in `block in create'
+  [1m[36mNote Create (2.2ms)[0m  [1m[32mINSERT INTO "notes" ("content", "created_at", "updated_at") VALUES ('what now', '2025-01-06 19:31:35.359015', '2025-01-06 19:31:35.359015') RETURNING "id" /*action='create',application='Napp',controller='notes'*/[0m
+  ↳ app/controllers/notes_controller.rb:29:in `block in create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT /*action='create',application='Napp',controller='notes'*/[0m
+  ↳ app/controllers/notes_controller.rb:29:in `block in create'
+Redirected to http://localhost:3000/notes
+Completed 302 Found in 427ms (ActiveRecord: 6.0ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/notes" for ::1 at 2025-01-06 16:31:35 -0300
+Processing by NotesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.erb within layouts/application
+  [1m[36mNote Load (0.4ms)[0m  [1m[34mSELECT "notes".* FROM "notes" /*action='index',application='Napp',controller='notes'*/[0m
+  ↳ app/views/notes/index.html.erb:28
+  Rendered notes/_note.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered notes/index.html.erb within layouts/application (Duration: 5.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | GC: 0.0ms)
+Completed 200 OK in 456ms (Views: 13.0ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/notes" for ::1 at 2025-01-06 16:36:11 -0300
+Processing by NotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.erb within layouts/application
+  [1m[36mNote Load (0.4ms)[0m  [1m[34mSELECT "notes".* FROM "notes" /*action='index',application='Napp',controller='notes'*/[0m
+  ↳ app/views/notes/index.html.erb:28:in `group_by'
+  Rendered notes/_note.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered notes/index.html.erb within layouts/application (Duration: 8.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | GC: 0.0ms)
+Completed 200 OK in 510ms (Views: 15.8ms | ActiveRecord: 6.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/notes/1" for ::1 at 2025-01-06 16:36:15 -0300
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mNote Load (0.6ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = 1 LIMIT 1 /*action='show',application='Napp',controller='notes'*/[0m
+  ↳ app/controllers/notes_controller.rb:66:in `set_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.erb within layouts/application
+  Rendered notes/_note.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered notes/show.html.erb within layouts/application (Duration: 1.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | GC: 0.0ms)
+Completed 200 OK in 423ms (Views: 2.9ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+

@@ -1,0 +1,11 @@
+<div class="note" id="<%= dom_id(note) %>">
+  <div class="content">
+    <%= simple_format(format_content_with_tags(note.content)) %>
+  </div>
+  <%= button_to toggle_star_note_path(note), 
+                class: "star-button #{note.starred ? 'starred' : ''}", 
+                method: :post,
+                form: { style: 'display: inline-block' } do %>
+    <%= note.starred ? "★" : "☆" %>
+  <% end %>
+</div>
