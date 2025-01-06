@@ -1280,3 +1280,81 @@ Processing by NotesController#index as HTML
 Completed 200 OK in 408ms (Views: 17.0ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
 
 
+Started POST "/notes" for ::1 at 2025-01-06 18:03:35 -0300
+Processing by NotesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "note"=>{"content"=>"fala galera"}, "commit"=>"Create Note"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*action='create',application='Napp',controller='notes'*/[0m
+  ↳ app/controllers/notes_controller.rb:52:in `block in create'
+  [1m[36mNote Create (2.9ms)[0m  [1m[32mINSERT INTO "notes" ("content", "created_at", "updated_at", "starred") VALUES ('fala galera', '2025-01-06 21:03:36.452549', '2025-01-06 21:03:36.452549', FALSE) RETURNING "id" /*action='create',application='Napp',controller='notes'*/[0m
+  ↳ app/controllers/notes_controller.rb:52:in `block in create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT /*action='create',application='Napp',controller='notes'*/[0m
+  ↳ app/controllers/notes_controller.rb:52:in `block in create'
+Redirected to http://localhost:3000/notes
+Completed 302 Found in 525ms (ActiveRecord: 11.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/notes" for ::1 at 2025-01-06 18:03:36 -0300
+Processing by NotesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.erb within layouts/application
+  [1m[36mNote Load (1.5ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY "notes"."created_at" DESC /*action='index',application='Napp',controller='notes'*/[0m
+  ↳ app/views/notes/index.html.erb:34:in `group_by'
+  Rendered notes/_note.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered notes/index.html.erb within layouts/application (Duration: 18.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 19.1ms | GC: 0.0ms)
+Completed 200 OK in 446ms (Views: 18.1ms | ActiveRecord: 1.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/notes?q=galera&commit=Search" for ::1 at 2025-01-06 18:03:42 -0300
+Processing by NotesController#index as HTML
+  Parameters: {"q"=>"galera", "commit"=>"Search"}
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.erb within layouts/application
+  [1m[36mNote Load (0.7ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE (content ILIKE '%galera%') ORDER BY "notes"."created_at" DESC /*action='index',application='Napp',controller='notes'*/[0m
+  ↳ app/views/notes/index.html.erb:34:in `group_by'
+  Rendered notes/_note.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered notes/index.html.erb within layouts/application (Duration: 4.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | GC: 0.0ms)
+Completed 200 OK in 423ms (Views: 5.6ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/notes" for ::1 at 2025-01-06 18:03:45 -0300
+Processing by NotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.erb within layouts/application
+  [1m[36mNote Load (0.5ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY "notes"."created_at" DESC /*action='index',application='Napp',controller='notes'*/[0m
+  ↳ app/views/notes/index.html.erb:34:in `group_by'
+  Rendered notes/_note.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered notes/index.html.erb within layouts/application (Duration: 16.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | GC: 0.0ms)
+Completed 200 OK in 435ms (Views: 17.1ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
