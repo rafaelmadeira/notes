@@ -268,6 +268,13 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    sprockets (4.2.1)
+      concurrent-ruby (~> 1.0)
+      rack (>= 2.2.4, < 4)
+    sprockets-rails (3.5.2)
+      actionpack (>= 6.1)
+      activesupport (>= 6.1)
+      sprockets (>= 3.0.0)
     sshkit (1.23.2)
       base64
       net-scp (>= 1.1.2)
@@ -325,6 +332,7 @@ DEPENDENCIES
   rails (~> 8.0.1)
   rubocop-rails-omakase
   selenium-webdriver
+  sprockets-rails
   stimulus-rails
   thruster
   turbo-rails

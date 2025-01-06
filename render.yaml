@@ -7,7 +7,9 @@ services:
   - type: web
     name: notes
     env: ruby
-    buildCommand: "./bin/render-build.sh"
+    buildCommand: |
+      bundle install
+      bundle exec rake db:migrate
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
       - key: DATABASE_URL
@@ -15,4 +17,6 @@ services:
           name: notes_production
           property: connectionString
       - key: RAILS_MASTER_KEY
-        sync: false 
+        sync: false
+      - key: RAILS_ENV
+        value: production 
