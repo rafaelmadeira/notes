@@ -23,5 +23,8 @@ module Napp
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    # Disable Action Cable
+    config.action_cable.mount_path = nil
   end
 end
