@@ -8,12 +8,10 @@ require "active_storage/engine"
 require "action_controller/railtie"
 require "action_mailer/railtie"
 require "action_view/railtie"
-# require "action_cable/engine"  # Comment this out
 require "rails/test_unit/railtie"
 
 module YourAppName # Replace with your actual app name
   class Application < Rails::Application
     config.load_defaults 7.0
-    config.action_cable.mount_path = nil
   end
 end
