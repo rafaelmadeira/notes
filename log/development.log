@@ -10408,3 +10408,153 @@ Processing by NotesController#index as HTML
 Completed 200 OK in 453ms (Views: 25.8ms | ActiveRecord: 4.4ms (11 queries, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/notes" for ::1 at 2025-01-07 15:11:06 -0300
+Processing by NotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.erb within layouts/application
+  [1m[36mNote Load (0.8ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY "notes"."created_at" DESC /*action='index',application='Napp',controller='notes'*/[0m
+  ↳ app/views/notes/index.html.erb:42:in `group_by'
+  [1m[36mNote Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "notes" WHERE (content LIKE '%[[26]]%') /*action='index',application='Napp',controller='notes'*/[0m
+  ↳ app/models/note.rb:5:in `reference_count'
+  Rendered notes/_note.html.erb (Duration: 2.9ms | GC: 0.0ms)
+  [1m[36mNote Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "notes" WHERE (content LIKE '%[[25]]%') /*action='index',application='Napp',controller='notes'*/[0m
+  ↳ app/models/note.rb:5:in `reference_count'
+  Rendered notes/_note.html.erb (Duration: 1.9ms | GC: 0.0ms)
+  [1m[36mNote Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "notes" WHERE (content LIKE '%[[19]]%') /*action='index',application='Napp',controller='notes'*/[0m
+  ↳ app/models/note.rb:5:in `reference_count'
+  Rendered notes/_note.html.erb (Duration: 2.8ms | GC: 0.0ms)
+  [1m[36mNote Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "notes" WHERE (content LIKE '%[[17]]%') /*action='index',application='Napp',controller='notes'*/[0m
+  ↳ app/models/note.rb:5:in `reference_count'
+  Rendered notes/_note.html.erb (Duration: 2.2ms | GC: 0.0ms)
+  [1m[36mNote Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "notes" WHERE (content LIKE '%[[16]]%') /*action='index',application='Napp',controller='notes'*/[0m
+  ↳ app/models/note.rb:5:in `reference_count'
+  Rendered notes/_note.html.erb (Duration: 2.7ms | GC: 0.0ms)
+  [1m[36mNote Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "notes" WHERE (content LIKE '%[[11]]%') /*action='index',application='Napp',controller='notes'*/[0m
+  ↳ app/models/note.rb:5:in `reference_count'
+  Rendered notes/_note.html.erb (Duration: 1.8ms | GC: 0.0ms)
+  [1m[36mNote Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "notes" WHERE (content LIKE '%[[10]]%') /*action='index',application='Napp',controller='notes'*/[0m
+  ↳ app/models/note.rb:5:in `reference_count'
+  Rendered notes/_note.html.erb (Duration: 1.7ms | GC: 0.0ms)
+  [1m[36mNote Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "notes" WHERE (content LIKE '%[[9]]%') /*action='index',application='Napp',controller='notes'*/[0m
+  ↳ app/models/note.rb:5:in `reference_count'
+  Rendered notes/_note.html.erb (Duration: 1.7ms | GC: 0.0ms)
+  [1m[36mNote Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "notes" WHERE (content LIKE '%[[8]]%') /*action='index',application='Napp',controller='notes'*/[0m
+  ↳ app/models/note.rb:5:in `reference_count'
+  Rendered notes/_note.html.erb (Duration: 1.7ms | GC: 0.0ms)
+  [1m[36mNote Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "notes" WHERE (content LIKE '%[[7]]%') /*action='index',application='Napp',controller='notes'*/[0m
+  ↳ app/models/note.rb:5:in `reference_count'
+  Rendered notes/_note.html.erb (Duration: 2.0ms | GC: 0.0ms)
+  Rendered notes/index.html.erb within layouts/application (Duration: 42.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 51.9ms | GC: 0.0ms)
+Completed 200 OK in 518ms (Views: 52.6ms | ActiveRecord: 17.2ms (11 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/assets/notes-2c1607b7.css" for ::1 at 2025-01-07 15:11:06 -0300
+Started GET "/assets/controllers/notes_controller-c4387b02.js" for ::1 at 2025-01-07 15:11:06 -0300
+Started GET "/notes/26" for ::1 at 2025-01-07 15:11:08 -0300
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mNote Load (0.6ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = 26 LIMIT 1 /*action='show',application='Napp',controller='notes'*/[0m
+  ↳ app/controllers/notes_controller.rb:88:in `set_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.erb within layouts/application
+  [1m[36mNote Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "notes" WHERE (content LIKE '%[[26]]%') /*action='show',application='Napp',controller='notes'*/[0m
+  ↳ app/models/note.rb:5:in `reference_count'
+  Rendered notes/_note.html.erb (Duration: 2.5ms | GC: 0.0ms)
+  Rendered notes/show.html.erb within layouts/application (Duration: 4.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | GC: 0.0ms)
+Completed 200 OK in 416ms (Views: 5.2ms | ActiveRecord: 1.0ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/notes/26/edit" for ::1 at 2025-01-07 15:11:10 -0300
+Processing by NotesController#edit as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mNote Load (0.6ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = 26 LIMIT 1 /*action='edit',application='Napp',controller='notes'*/[0m
+  ↳ app/controllers/notes_controller.rb:88:in `set_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/edit.html.erb within layouts/application
+  Rendered notes/edit.html.erb within layouts/application (Duration: 1.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | GC: 0.0ms)
+Completed 200 OK in 420ms (Views: 2.9ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/notes/26" for ::1 at 2025-01-07 15:11:20 -0300
+Processing by NotesController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "note"=>{"content"=>"Temperança pode ser entendida como a capacidade de renunciar a um prazer, de refrear os impulsos. Autodomínio, né.\n\nSe pá tem ligação com aquela distinção que o fundamentos da antropologia faz, entre desejo e impulso. Se não me engano, o desejo é do apetite irascível e o impulso, do concupiscível. Mas preciso confirmar."}, "commit"=>"Update Note", "id"=>"26"}
+  [1m[36mNote Load (0.5ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = 26 LIMIT 1 /*action='update',application='Napp',controller='notes'*/[0m
+  ↳ app/controllers/notes_controller.rb:88:in `set_note'
+Redirected to http://localhost:3000/notes/26
+Completed 302 Found in 444ms (ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/notes/26" for ::1 at 2025-01-07 15:11:20 -0300
+Processing by NotesController#show as TURBO_STREAM
+  Parameters: {"id"=>"26"}
+  [1m[36mNote Load (0.5ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = 26 LIMIT 1 /*action='show',application='Napp',controller='notes'*/[0m
+  ↳ app/controllers/notes_controller.rb:88:in `set_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.erb within layouts/application
+  [1m[36mNote Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "notes" WHERE (content LIKE '%[[26]]%') /*action='show',application='Napp',controller='notes'*/[0m
+  ↳ app/models/note.rb:5:in `reference_count'
+  Rendered notes/_note.html.erb (Duration: 2.5ms | GC: 0.0ms)
+  Rendered notes/show.html.erb within layouts/application (Duration: 4.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | GC: 0.0ms)
+Completed 200 OK in 451ms (Views: 5.6ms | ActiveRecord: 1.0ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/notes" for ::1 at 2025-01-07 15:11:22 -0300
+Processing by NotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.erb within layouts/application
+  [1m[36mNote Load (0.4ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY "notes"."created_at" DESC /*action='index',application='Napp',controller='notes'*/[0m
+  ↳ app/views/notes/index.html.erb:42:in `group_by'
+  [1m[36mNote Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "notes" WHERE (content LIKE '%[[26]]%') /*action='index',application='Napp',controller='notes'*/[0m
+  ↳ app/models/note.rb:5:in `reference_count'
+  Rendered notes/_note.html.erb (Duration: 2.3ms | GC: 0.0ms)
+  [1m[36mNote Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "notes" WHERE (content LIKE '%[[25]]%') /*action='index',application='Napp',controller='notes'*/[0m
+  ↳ app/models/note.rb:5:in `reference_count'
+  Rendered notes/_note.html.erb (Duration: 2.4ms | GC: 0.0ms)
+  [1m[36mNote Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "notes" WHERE (content LIKE '%[[19]]%') /*action='index',application='Napp',controller='notes'*/[0m
+  ↳ app/models/note.rb:5:in `reference_count'
+  Rendered notes/_note.html.erb (Duration: 1.9ms | GC: 0.0ms)
+  [1m[36mNote Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "notes" WHERE (content LIKE '%[[17]]%') /*action='index',application='Napp',controller='notes'*/[0m
+  ↳ app/models/note.rb:5:in `reference_count'
+  Rendered notes/_note.html.erb (Duration: 1.9ms | GC: 0.0ms)
+  [1m[36mNote Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "notes" WHERE (content LIKE '%[[16]]%') /*action='index',application='Napp',controller='notes'*/[0m
+  ↳ app/models/note.rb:5:in `reference_count'
+  Rendered notes/_note.html.erb (Duration: 1.8ms | GC: 0.0ms)
+  [1m[36mNote Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "notes" WHERE (content LIKE '%[[11]]%') /*action='index',application='Napp',controller='notes'*/[0m
+  ↳ app/models/note.rb:5:in `reference_count'
+  Rendered notes/_note.html.erb (Duration: 1.7ms | GC: 0.0ms)
+  [1m[36mNote Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "notes" WHERE (content LIKE '%[[10]]%') /*action='index',application='Napp',controller='notes'*/[0m
+  ↳ app/models/note.rb:5:in `reference_count'
+  Rendered notes/_note.html.erb (Duration: 1.7ms | GC: 0.0ms)
+  [1m[36mNote Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "notes" WHERE (content LIKE '%[[9]]%') /*action='index',application='Napp',controller='notes'*/[0m
+  ↳ app/models/note.rb:5:in `reference_count'
+  Rendered notes/_note.html.erb (Duration: 1.8ms | GC: 0.0ms)
+  [1m[36mNote Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "notes" WHERE (content LIKE '%[[8]]%') /*action='index',application='Napp',controller='notes'*/[0m
+  ↳ app/models/note.rb:5:in `reference_count'
+  Rendered notes/_note.html.erb (Duration: 3.3ms | GC: 0.0ms)
+  [1m[36mNote Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "notes" WHERE (content LIKE '%[[7]]%') /*action='index',application='Napp',controller='notes'*/[0m
+  ↳ app/models/note.rb:5:in `reference_count'
+  Rendered notes/_note.html.erb (Duration: 2.1ms | GC: 0.0ms)
+  Rendered notes/index.html.erb within layouts/application (Duration: 26.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 27.8ms | GC: 0.0ms)
+Completed 200 OK in 440ms (Views: 24.2ms | ActiveRecord: 4.1ms (11 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/notes/26" for ::1 at 2025-01-07 15:11:25 -0300
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mNote Load (0.6ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = 26 LIMIT 1 /*action='show',application='Napp',controller='notes'*/[0m
+  ↳ app/controllers/notes_controller.rb:88:in `set_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.erb within layouts/application
+  [1m[36mNote Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "notes" WHERE (content LIKE '%[[26]]%') /*action='show',application='Napp',controller='notes'*/[0m
+  ↳ app/models/note.rb:5:in `reference_count'
+  Rendered notes/_note.html.erb (Duration: 2.6ms | GC: 0.0ms)
+  Rendered notes/show.html.erb within layouts/application (Duration: 4.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | GC: 0.0ms)
+Completed 200 OK in 416ms (Views: 5.2ms | ActiveRecord: 1.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+

@@ -2,7 +2,21 @@
 
 <h1>Editing note</h1>
 
-<%= render "form", note: @note %>
+<div data-controller="notes">
+  <%= form_with(model: @note, 
+               local: true,
+               html: { class: "note-form" }) do |f| %>
+    <div class="field">
+      <%= f.text_area :content, 
+          data: { 
+            notes_target: "input",
+            action: "input->notes#inputChanged"
+          } %>
+    </div>
+    <%= f.submit "Update Note", 
+        data: { notes_target: "submit" } %>
+  <% end %>
+</div>
 
 <br>
 

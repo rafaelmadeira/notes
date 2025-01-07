@@ -231,8 +231,7 @@ input[type="submit"]:disabled {
 
 textarea {
   min-height: 4rem;
-  resize: none;
-  overflow-y: hidden;
+  resize: vertical;
   box-sizing: border-box;
   width: 100%;
   padding: 0.5rem;
