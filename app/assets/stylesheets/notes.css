@@ -113,4 +113,22 @@
 .clear-filter:hover {
   text-decoration: underline;
   color: #000;
+}
+
+.delete-note {
+  color: #999;
+  text-decoration: none;
+  margin-left: 0.5rem;
+  font-size: 1.2em;
+  line-height: 1;
+}
+
+.delete-note:hover {
+  color: #ff4444;
+}
+
+.note-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
 } 

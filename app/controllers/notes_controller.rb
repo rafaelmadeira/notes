@@ -77,12 +77,9 @@ class NotesController < ApplicationController
 
   # DELETE /notes/1 or /notes/1.json
   def destroy
-    @note.destroy!
-
-    respond_to do |format|
-      format.html { redirect_to notes_path, status: :see_other, notice: "Note was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    @note = Note.find(params[:id])
+    @note.destroy
+    redirect_to notes_path, notice: 'Note was successfully deleted.'
   end
 
   private

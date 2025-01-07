@@ -17,5 +17,12 @@
                   notes_path(referencing: note.id),
                   class: "reference-count" %>
     <% end %>
+    <%= link_to "×", 
+                note_path(note), 
+                class: "delete-note",
+                data: { 
+                  turbo_method: :delete,
+                  turbo_confirm: "Are you sure you want to delete this note?" 
+                } %>
   </div>
 </div>
