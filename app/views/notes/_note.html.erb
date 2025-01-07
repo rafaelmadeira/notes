@@ -1,14 +1,19 @@
 <div class="note" id="<%= dom_id(note) %>">
-  <div class="content">
-    <%= format_note_content(note.content) %>
-  </div>
-  <div class="note-actions">
+  <div class="note-header">
     <%= button_to toggle_star_note_path(note), 
                   class: "star-button #{note.starred ? 'starred' : ''}", 
                   method: :post,
                   form: { style: 'display: inline-block' } do %>
       <%= note.starred ? "★" : "☆" %>
     <% end %>
+  </div>
+  <div class="content">
+    <%= format_note_content(note.content) %>
+  </div>
+  <div class="note-actions">
+    <%= link_to "##{note.id}", 
+                note_path(note),
+                class: "note-permalink" %>
     <button class="reply-button" data-note-id="<%= note.id %>" type="button">
       Reply
     </button>

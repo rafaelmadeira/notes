@@ -1,10 +1,50 @@
+#notes h2 {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 2rem;
+}
+
+#notes h2:first-of-type {
+    display: none;
+}
+
+.notes-for-date {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.note {
+  position: relative;
+  padding: 1rem 2rem 1rem 1rem;
+  border: 1px solid #ddd;
+  margin-bottom: 1rem;
+  border-radius: 0.25rem;
+  background-color: #fff;
+}
+
+.note-header {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+}
+
+.note-actions {
+    visibility: hidden;
+}
+
+.note:hover .note-actions {
+    visibility: visible;
+}
+
 .star-button {
   background: none;
   border: none;
-  padding: 0;
   font-size: 1.2em;
+  color: #ccc;
   cursor: pointer;
-  color: #666;
+  padding: 0.25rem;
 }
 
 .star-button.starred {
@@ -12,7 +52,7 @@
 }
 
 .star-button:hover {
-  transform: scale(1.1);
+  color: #ffd700;
 }
 
 .search-form {
@@ -131,4 +171,23 @@
   display: flex;
   align-items: center;
   gap: 0.25rem;
+}
+
+.note-permalink {
+  color: #999;
+  text-decoration: none;
+  margin-right: 0.5rem;
+}
+
+.note-permalink:hover {
+  color: #666;
+  text-decoration: underline;
+}
+
+.note .content p:first-of-type {
+  margin-top: 0;
+}
+
+input[type="submit"]:disabled {
+  opacity: 0.5;
 } 

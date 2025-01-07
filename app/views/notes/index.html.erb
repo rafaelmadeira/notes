@@ -2,14 +2,22 @@
 
 <% content_for :title, "Notes" %>
 
-<h1>Notes</h1>
+<h1><%= Date.today.strftime("%B %d, %Y") %></h1>
 
 <div data-controller="notes">
   <%= form_with(model: @note, local: true) do |f| %>
     <div class="field">
-      <%= f.text_area :content, data: { notes_target: "input" } %>
+      <%= f.text_area :content, 
+          data: { 
+            notes_target: "input",
+            action: "input->notes#inputChanged"
+          }, 
+          class: "note-input" %>
     </div>
-    <%= f.submit "Create Note" %>
+    <%= f.submit "Create Note", 
+        data: { notes_target: "submit" },
+        disabled: true,
+        class: "create-note-button" %>
   <% end %>
 
   <% if @note.errors.any? %>
@@ -37,7 +45,6 @@
       <div class="notes-for-date">
         <% notes.each do |note| %>
           <%= render note %>
-          <%= link_to note.created_at.strftime("%Y-%m-%d %H:%M:%S"), note, class: "permalink", title: "Permalink to this note" %>
         <% end %>
       </div>
     <% end %>

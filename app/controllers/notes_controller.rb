@@ -50,15 +50,11 @@ class NotesController < ApplicationController
   def create
     @note = Note.new(note_params)
 
-    respond_to do |format|
-      if @note.save
-        format.html { redirect_to notes_path, notice: "Note was successfully created." }
-        format.json { render :show, status: :created, location: @note }
-      else
-        @notes = Note.all
-        format.html { render :index, status: :unprocessable_entity }
-        format.json { render json: @note.errors, status: :unprocessable_entity }
-      end
+    if @note.save
+      redirect_to notes_path
+    else
+      @notes = Note.order(created_at: :desc)
+      render :index, status: :unprocessable_entity
     end
   end
 
@@ -79,7 +75,11 @@ class NotesController < ApplicationController
   def destroy
     @note = Note.find(params[:id])
     @note.destroy
-    redirect_to notes_path, notice: 'Note was successfully deleted.'
+
+    respond_to do |format|
+      format.html { redirect_to notes_path, notice: 'Note was successfully deleted.' }
+      format.turbo_stream { render turbo_stream: turbo_stream.remove(@note) }
+    end
   end
 
   private

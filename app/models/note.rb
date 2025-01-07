@@ -1,4 +1,6 @@
 class Note < ApplicationRecord
+  validates :content, presence: true
+
   def reference_count
     Note.where("content LIKE ?", "%[[#{id}]]%").count
   end

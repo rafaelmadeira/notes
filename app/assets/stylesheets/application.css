@@ -8,3 +8,36 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+   font-family: system-ui, sans-serif;
+   background-color: #F6F2EF;
+}
+
+#wrapper {
+   max-width: 640px;
+   margin: 0 auto;
+}
+
+.note-input {
+    width: 100%;
+    padding: 1rem;
+    border-radius: .25rem;
+    border: 1px solid #ccc;
+}
+
+.create-note-button {
+    background-color: cadetblue;
+    padding: .5rem 1rem;
+    border-radius: .25rem;
+    border: none;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+}
