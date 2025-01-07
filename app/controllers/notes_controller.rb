@@ -8,6 +8,8 @@ class NotesController < ApplicationController
       Note.where("content ILIKE ?", "%#{params[:q]}%")
     elsif params[:tag]
       Note.where("content LIKE ?", "%##{params[:tag]}%")
+    elsif params[:referencing]
+      Note.referencing(params[:referencing])
     else
       Note.all
     end

@@ -64,4 +64,11 @@
       <%= link_to "Clear search", notes_path, class: "clear-search" %>
     </div>
   <% end %>
+
+  <% if params[:referencing].present? %>
+    <div class="filter-notice">
+      Showing notes referencing #<%= params[:referencing] %>
+      <%= link_to "Clear filter", notes_path, class: "clear-filter" %>
+    </div>
+  <% end %>
 </div>

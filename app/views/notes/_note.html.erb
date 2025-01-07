@@ -12,5 +12,10 @@
     <button class="reply-button" data-note-id="<%= note.id %>" type="button">
       Reply
     </button>
+    <% if note.reference_count > 0 %>
+      <%= link_to "(#{note.reference_count})", 
+                  notes_path(referencing: note.id),
+                  class: "reference-count" %>
+    <% end %>
   </div>
 </div>
