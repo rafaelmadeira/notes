@@ -52,6 +52,27 @@ module NotesHelper
       .html_safe
   end
 
+  def format_timestamp(datetime)
+    full_timestamp = datetime.strftime("%Y-%m-%d %H:%M")
+    
+    seconds_ago = Time.current - datetime
+    hours_ago = seconds_ago / 3600
+    
+    display_text = if hours_ago < 24
+      if hours_ago < 1
+        "#{(seconds_ago / 60).to_i}m"
+      else
+        "#{hours_ago.to_i}h"
+      end
+    elsif datetime.year == Time.current.year
+      datetime.strftime("%b %-d")
+    else
+      datetime.strftime("%b %-d, %Y")
+    end
+
+    content_tag(:span, display_text, title: full_timestamp)
+  end
+
   private
 
   def render_embedded_note(note)
@@ -60,8 +81,8 @@ module NotesHelper
         <div class="embedded-note-content" data-embedded-note-target="content" data-action="click->embedded-note#toggle">
           #{format_note_content(note.content)}
           <div class="embedded-note-footer">
-            <a href="#{note_path(note)}" class="embedded-note-timestamp">
-              #{time_ago_in_words(note.created_at)} ago
+            <a href="#{note_path(note)}" class="embedded-note-timestamp" title="#{note.created_at.strftime("%Y-%m-%d %H:%M")}">
+              #{format_timestamp(note.created_at)}
             </a>
           </div>
         </div>
