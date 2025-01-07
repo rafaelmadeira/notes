@@ -18,11 +18,16 @@
 body {
    font-family: system-ui, sans-serif;
    background-color: #F6F2EF;
+   padding: 1rem;
 }
 
 #wrapper {
    max-width: 640px;
    margin: 0 auto;
+}
+
+.new-note-form {
+    margin: 2rem 0;
 }
 
 .note-input {
