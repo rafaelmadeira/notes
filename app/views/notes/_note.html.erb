@@ -21,7 +21,7 @@
     </button>
   <% end %>
   <div class="note-actions">
-    <%= link_to "##{note.id}", 
+    <%= link_to format_timestamp(note.created_at), 
                 note_path(note),
                 class: "note-permalink" %>
     <button class="reply-button" data-note-id="<%= note.id %>" type="button">
@@ -29,7 +29,7 @@
     </button>
     <% if note.reference_count > 0 %>
       <%= link_to "#{note.reference_count} #{note.reference_count == 1 ? 'reference' : 'references'}", 
-                  notes_path(referencing: note.id),
+                  note_path(note),
                   class: "reference-count" %>
     <% end %>
     <%= link_to "Edit",
