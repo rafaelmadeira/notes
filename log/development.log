@@ -1358,3 +1358,428 @@ Processing by NotesController#index as HTML
 Completed 200 OK in 435ms (Views: 17.1ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
 
 
+Started POST "/notes" for ::1 at 2025-01-06 20:18:47 -0300
+Processing by NotesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "note"=>{"content"=>"Os tenets\n\n- Jamais vá contra sua consciência\n- Termine o que começa \n- Faça todas as coisas bem\n- Faz o que deves (justiça)\n- Está no que fazes\n- Não reclame\n- Exame de consciência"}, "commit"=>"Create Note"}
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN /*action='create',application='Napp',controller='notes'*/[0m
+  ↳ app/controllers/notes_controller.rb:52:in `block in create'
+  [1m[36mNote Create (13.8ms)[0m  [1m[32mINSERT INTO "notes" ("content", "created_at", "updated_at", "starred") VALUES ('Os tenets
+
+- Jamais vá contra sua consciência
+- Termine o que começa 
+- Faça todas as coisas bem
+- Faz o que deves (justiça)
+- Está no que fazes
+- Não reclame
+- Exame de consciência', '2025-01-06 23:18:48.680251', '2025-01-06 23:18:48.680251', FALSE) RETURNING "id" /*action='create',application='Napp',controller='notes'*/[0m
+  ↳ app/controllers/notes_controller.rb:52:in `block in create'
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[35mCOMMIT /*action='create',application='Napp',controller='notes'*/[0m
+  ↳ app/controllers/notes_controller.rb:52:in `block in create'
+Redirected to http://localhost:3000/notes
+Completed 302 Found in 1044ms (ActiveRecord: 47.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/notes" for ::1 at 2025-01-06 20:18:48 -0300
+Processing by NotesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.erb within layouts/application
+  [1m[36mNote Load (2.6ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY "notes"."created_at" DESC /*action='index',application='Napp',controller='notes'*/[0m
+  ↳ app/views/notes/index.html.erb:34:in `group_by'
+  Rendered notes/_note.html.erb (Duration: 2.0ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 1.7ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 1.6ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 1.5ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 3.5ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 1.2ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered notes/index.html.erb within layouts/application (Duration: 57.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 60.6ms | GC: 0.0ms)
+Completed 200 OK in 837ms (Views: 59.7ms | ActiveRecord: 2.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/notes" for ::1 at 2025-01-06 20:18:58 -0300
+Processing by NotesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "note"=>{"content"=>"Temos o dever de ajudar as pessoas a cumprir seus deveres\n\nEx: se o nosso cônjuge tem o dever de fazer o sexo conosco, nós, por nossa vez, temos o dever de facilitar isso, nos cuidando fisicamente, mantendo-nos atraentes e removendo os empecilhos que dificultam isso para ele."}, "commit"=>"Create Note"}
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN /*action='create',application='Napp',controller='notes'*/[0m
+  ↳ app/controllers/notes_controller.rb:52:in `block in create'
+  [1m[36mNote Create (6.5ms)[0m  [1m[32mINSERT INTO "notes" ("content", "created_at", "updated_at", "starred") VALUES ('Temos o dever de ajudar as pessoas a cumprir seus deveres
+
+Ex: se o nosso cônjuge tem o dever de fazer o sexo conosco, nós, por nossa vez, temos o dever de facilitar isso, nos cuidando fisicamente, mantendo-nos atraentes e removendo os empecilhos que dificultam isso para ele.', '2025-01-06 23:19:00.117384', '2025-01-06 23:19:00.117384', FALSE) RETURNING "id" /*action='create',application='Napp',controller='notes'*/[0m
+  ↳ app/controllers/notes_controller.rb:52:in `block in create'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT /*action='create',application='Napp',controller='notes'*/[0m
+  ↳ app/controllers/notes_controller.rb:52:in `block in create'
+Redirected to http://localhost:3000/notes
+Completed 302 Found in 1371ms (ActiveRecord: 8.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/notes" for ::1 at 2025-01-06 20:19:00 -0300
+Processing by NotesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.erb within layouts/application
+  [1m[36mNote Load (0.9ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY "notes"."created_at" DESC /*action='index',application='Napp',controller='notes'*/[0m
+  ↳ app/views/notes/index.html.erb:34:in `group_by'
+  Rendered notes/_note.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 6.5ms | GC: 0.0ms)
+  Rendered notes/index.html.erb within layouts/application (Duration: 38.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 39.9ms | GC: 0.0ms)
+Completed 200 OK in 1033ms (Views: 40.0ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/notes" for ::1 at 2025-01-06 20:40:11 -0300
+Processing by NotesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "note"=>{"content"=>"whitelisted actions"}, "commit"=>"Create Note"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*action='create',application='Napp',controller='notes'*/[0m
+  ↳ app/controllers/notes_controller.rb:52:in `block in create'
+  [1m[36mNote Create (6.3ms)[0m  [1m[32mINSERT INTO "notes" ("content", "created_at", "updated_at", "starred") VALUES ('whitelisted actions', '2025-01-06 23:40:12.190494', '2025-01-06 23:40:12.190494', FALSE) RETURNING "id" /*action='create',application='Napp',controller='notes'*/[0m
+  ↳ app/controllers/notes_controller.rb:52:in `block in create'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT /*action='create',application='Napp',controller='notes'*/[0m
+  ↳ app/controllers/notes_controller.rb:52:in `block in create'
+Redirected to http://localhost:3000/notes
+Completed 302 Found in 894ms (ActiveRecord: 20.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/notes" for ::1 at 2025-01-06 20:40:12 -0300
+Processing by NotesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.erb within layouts/application
+  [1m[36mNote Load (2.7ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY "notes"."created_at" DESC /*action='index',application='Napp',controller='notes'*/[0m
+  ↳ app/views/notes/index.html.erb:34:in `group_by'
+  Rendered notes/_note.html.erb (Duration: 1.2ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 1.2ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 1.2ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered notes/index.html.erb within layouts/application (Duration: 44.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 46.1ms | GC: 0.0ms)
+Completed 200 OK in 891ms (Views: 44.3ms | ActiveRecord: 2.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/notes" for ::1 at 2025-01-07 10:32:21 -0300
+Processing by NotesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "note"=>{"content"=>"justiça e prudência tratam do que deve ser feito; fortaleza e temperança, das nossas condições de fazê-lo."}, "commit"=>"Create Note"}
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN /*action='create',application='Napp',controller='notes'*/[0m
+  ↳ app/controllers/notes_controller.rb:52:in `block in create'
+  [1m[36mNote Create (12.0ms)[0m  [1m[32mINSERT INTO "notes" ("content", "created_at", "updated_at", "starred") VALUES ('justiça e prudência tratam do que deve ser feito; fortaleza e temperança, das nossas condições de fazê-lo.', '2025-01-07 13:32:22.084707', '2025-01-07 13:32:22.084707', FALSE) RETURNING "id" /*action='create',application='Napp',controller='notes'*/[0m
+  ↳ app/controllers/notes_controller.rb:52:in `block in create'
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[35mCOMMIT /*action='create',application='Napp',controller='notes'*/[0m
+  ↳ app/controllers/notes_controller.rb:52:in `block in create'
+Redirected to http://localhost:3000/notes
+Completed 302 Found in 1085ms (ActiveRecord: 47.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/notes" for ::1 at 2025-01-07 10:32:22 -0300
+Processing by NotesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.erb within layouts/application
+  [1m[36mNote Load (9.3ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY "notes"."created_at" DESC /*action='index',application='Napp',controller='notes'*/[0m
+  ↳ app/views/notes/index.html.erb:34:in `group_by'
+  Rendered notes/_note.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 1.5ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered notes/index.html.erb within layouts/application (Duration: 64.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 67.4ms | GC: 0.0ms)
+Completed 200 OK in 1009ms (Views: 59.5ms | ActiveRecord: 9.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/notes/19" for ::1 at 2025-01-07 10:33:04 -0300
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mNote Load (0.8ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = 19 LIMIT 1 /*action='show',application='Napp',controller='notes'*/[0m
+  ↳ app/controllers/notes_controller.rb:89:in `set_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.erb within layouts/application
+  Rendered notes/_note.html.erb (Duration: 1.6ms | GC: 0.0ms)
+  Rendered notes/show.html.erb within layouts/application (Duration: 5.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | GC: 0.0ms)
+Completed 200 OK in 711ms (Views: 7.1ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/notes/19" for ::1 at 2025-01-07 10:33:33 -0300
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mNote Load (1.0ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = 19 LIMIT 1 /*action='show',application='Napp',controller='notes'*/[0m
+  ↳ app/controllers/notes_controller.rb:89:in `set_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.erb within layouts/application
+  Rendered notes/_note.html.erb (Duration: 2.1ms | GC: 0.0ms)
+  Rendered notes/show.html.erb within layouts/application (Duration: 4.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | GC: 0.0ms)
+Completed 200 OK in 772ms (Views: 6.9ms | ActiveRecord: 1.0ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/notes/19" for ::1 at 2025-01-07 10:33:34 -0300
+Processing by NotesController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mNote Load (0.8ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = 19 LIMIT 1 /*action='show',application='Napp',controller='notes'*/[0m
+  ↳ app/controllers/notes_controller.rb:89:in `set_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.erb within layouts/application
+  Rendered notes/_note.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered notes/show.html.erb within layouts/application (Duration: 2.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | GC: 0.0ms)
+Completed 200 OK in 1251ms (Views: 5.3ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/notes/19/edit" for ::1 at 2025-01-07 10:33:36 -0300
+Processing by NotesController#edit as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mNote Load (0.9ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = 19 LIMIT 1 /*action='edit',application='Napp',controller='notes'*/[0m
+  ↳ app/controllers/notes_controller.rb:89:in `set_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/edit.html.erb within layouts/application
+  Rendered notes/_form.html.erb (Duration: 3.9ms | GC: 0.0ms)
+  Rendered notes/edit.html.erb within layouts/application (Duration: 8.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | GC: 0.0ms)
+Completed 200 OK in 742ms (Views: 10.3ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/notes/19" for ::1 at 2025-01-07 10:33:49 -0300
+Processing by NotesController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "note"=>{"content"=>"justiça e prudência tratam do que deve ser feito; fortaleza e temperança, das nossas condições de fazê-lo.\n\n#virtue"}, "commit"=>"Update Note", "id"=>"19"}
+  [1m[36mNote Load (1.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = 19 LIMIT 1 /*action='update',application='Napp',controller='notes'*/[0m
+  ↳ app/controllers/notes_controller.rb:89:in `set_note'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN /*action='update',application='Napp',controller='notes'*/[0m
+  ↳ app/controllers/notes_controller.rb:66:in `block in update'
+  [1m[36mNote Update (12.6ms)[0m  [1m[33mUPDATE "notes" SET "content" = 'justiça e prudência tratam do que deve ser feito; fortaleza e temperança, das nossas condições de fazê-lo.
+
+#virtue', "updated_at" = '2025-01-07 13:33:49.880135' WHERE "notes"."id" = 19 /*action='update',application='Napp',controller='notes'*/[0m
+  ↳ app/controllers/notes_controller.rb:66:in `block in update'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT /*action='update',application='Napp',controller='notes'*/[0m
+  ↳ app/controllers/notes_controller.rb:66:in `block in update'
+Redirected to http://localhost:3000/notes/19
+Completed 302 Found in 691ms (ActiveRecord: 15.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/notes/19" for ::1 at 2025-01-07 10:33:49 -0300
+Processing by NotesController#show as TURBO_STREAM
+  Parameters: {"id"=>"19"}
+  [1m[36mNote Load (0.7ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = 19 LIMIT 1 /*action='show',application='Napp',controller='notes'*/[0m
+  ↳ app/controllers/notes_controller.rb:89:in `set_note'
+  Rendering layout layouts/application.html.erb
+  Rendering notes/show.html.erb within layouts/application
+  Rendered notes/_note.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered notes/show.html.erb within layouts/application (Duration: 3.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | GC: 0.0ms)
+Completed 200 OK in 715ms (Views: 5.4ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/notes?tag=virtue" for ::1 at 2025-01-07 10:33:51 -0300
+Processing by NotesController#index as HTML
+  Parameters: {"tag"=>"virtue"}
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.erb within layouts/application
+  [1m[36mNote Load (1.4ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE (content LIKE '%#virtue%') ORDER BY "notes"."created_at" DESC /*action='index',application='Napp',controller='notes'*/[0m
+  ↳ app/views/notes/index.html.erb:34:in `group_by'
+  Rendered notes/_note.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered notes/index.html.erb within layouts/application (Duration: 10.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | GC: 0.0ms)
+Completed 200 OK in 675ms (Views: 12.8ms | ActiveRecord: 1.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/notes" for ::1 at 2025-01-07 10:33:55 -0300
+Processing by NotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.erb within layouts/application
+  [1m[36mNote Load (1.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY "notes"."created_at" DESC /*action='index',application='Napp',controller='notes'*/[0m
+  ↳ app/views/notes/index.html.erb:34:in `group_by'
+  Rendered notes/_note.html.erb (Duration: 1.5ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 1.5ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 1.2ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 1.2ms | GC: 0.0ms)
+  Rendered notes/index.html.erb within layouts/application (Duration: 56.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 58.7ms | GC: 0.0ms)
+Completed 200 OK in 672ms (Views: 59.2ms | ActiveRecord: 1.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/notes" for ::1 at 2025-01-07 10:46:07 -0300
+Processing by NotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.erb within layouts/application
+  [1m[36mNote Load (6.2ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY "notes"."created_at" DESC /*action='index',application='Napp',controller='notes'*/[0m
+  ↳ app/views/notes/index.html.erb:34:in `group_by'
+  Rendered notes/_note.html.erb (Duration: 6.2ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 1.2ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 1.2ms | GC: 0.0ms)
+  Rendered notes/index.html.erb within layouts/application (Duration: 87.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 539.8ms | GC: 0.0ms)
+Completed 200 OK in 1619ms (Views: 551.7ms | ActiveRecord: 34.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/assets/notes-6cfcc8ae.css" for ::1 at 2025-01-07 10:46:09 -0300
+Started GET "/assets/controllers/notes_controller-a9082076.js" for ::1 at 2025-01-07 10:46:09 -0300
+Started GET "/notes" for ::1 at 2025-01-07 10:47:42 -0300
+Processing by NotesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.erb within layouts/application
+  [1m[36mNote Load (1.1ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY "notes"."created_at" DESC /*action='index',application='Napp',controller='notes'*/[0m
+  ↳ app/views/notes/index.html.erb:34:in `group_by'
+  Rendered notes/_note.html.erb (Duration: 1.9ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered notes/index.html.erb within layouts/application (Duration: 51.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 61.4ms | GC: 0.0ms)
+Completed 200 OK in 1009ms (Views: 71.4ms | ActiveRecord: 26.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/notes?tag=virtue" for ::1 at 2025-01-07 10:47:45 -0300
+Processing by NotesController#index as HTML
+  Parameters: {"tag"=>"virtue"}
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.erb within layouts/application
+  [1m[36mNote Load (1.6ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE (content LIKE '%#virtue%') ORDER BY "notes"."created_at" DESC /*action='index',application='Napp',controller='notes'*/[0m
+  ↳ app/views/notes/index.html.erb:34:in `group_by'
+  Rendered notes/_note.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered notes/index.html.erb within layouts/application (Duration: 11.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | GC: 0.0ms)
+Completed 200 OK in 779ms (Views: 12.8ms | ActiveRecord: 1.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/notes" for ::1 at 2025-01-07 10:47:59 -0300
+Processing by NotesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "note"=>{"content"=>"[[19]]\n\nwhat he said\n"}, "commit"=>"Create Note"}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN /*action='create',application='Napp',controller='notes'*/[0m
+  ↳ app/controllers/notes_controller.rb:52:in `block in create'
+  [1m[36mNote Create (5.2ms)[0m  [1m[32mINSERT INTO "notes" ("content", "created_at", "updated_at", "starred") VALUES ('[[19]]
+
+what he said
+', '2025-01-07 13:48:00.306964', '2025-01-07 13:48:00.306964', FALSE) RETURNING "id" /*action='create',application='Napp',controller='notes'*/[0m
+  ↳ app/controllers/notes_controller.rb:52:in `block in create'
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT /*action='create',application='Napp',controller='notes'*/[0m
+  ↳ app/controllers/notes_controller.rb:52:in `block in create'
+Redirected to http://localhost:3000/notes
+Completed 302 Found in 769ms (ActiveRecord: 7.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/notes" for ::1 at 2025-01-07 10:48:00 -0300
+Processing by NotesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering notes/index.html.erb within layouts/application
+  [1m[36mNote Load (1.0ms)[0m  [1m[34mSELECT "notes".* FROM "notes" ORDER BY "notes"."created_at" DESC /*action='index',application='Napp',controller='notes'*/[0m
+  ↳ app/views/notes/index.html.erb:34:in `group_by'
+  [1m[36mNote Load (1.0ms)[0m  [1m[34mSELECT "notes".* FROM "notes" WHERE "notes"."id" = 19 LIMIT 1 /*action='index',application='Napp',controller='notes'*/[0m
+  ↳ app/helpers/notes_helper.rb:6:in `block in format_note_content'
+  Rendered notes/_note.html.erb (Duration: 6.6ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered notes/_note.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered notes/index.html.erb within layouts/application (Duration: 43.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 46.4ms | GC: 0.0ms)
+Completed 200 OK in 834ms (Views: 45.7ms | ActiveRecord: 2.0ms (2 queries, 0 cached) | GC: 0.0ms)
+
+

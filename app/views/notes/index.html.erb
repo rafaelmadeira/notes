@@ -4,7 +4,14 @@
 
 <h1>Notes</h1>
 
-<%= form_with(model: @note, local: true) do |f| %>
+<div data-controller="notes">
+  <%= form_with(model: @note, local: true) do |f| %>
+    <div class="field">
+      <%= f.text_area :content, data: { notes_target: "input" } %>
+    </div>
+    <%= f.submit "Create Note" %>
+  <% end %>
+
   <% if @note.errors.any? %>
     <div class="error-messages">
       <h2><%= pluralize(@note.errors.count, "error") %> prohibited this note from being saved:</h2>
@@ -16,51 +23,45 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.text_area :content %>
+  <% if params[:tag] %>
+    <div class="current-tag">
+      Showing notes tagged with: #<%= params[:tag] %>
+      <%= link_to "Clear filter", notes_path, class: "clear-filter" %>
+    </div>
+  <% end %>
+
+  <div id="notes">
+    <% @notes.group_by { |note| note.created_at.to_date }.sort.reverse.each do |date, notes| %>
+      <h2><%= date.strftime("%B %d, %Y") %></h2>
+      
+      <div class="notes-for-date">
+        <% notes.each do |note| %>
+          <%= render note %>
+          <%= link_to note.created_at.strftime("%Y-%m-%d %H:%M:%S"), note, class: "permalink", title: "Permalink to this note" %>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 
-  <%= f.submit "Create Note" %>
-<% end %>
-
-<% if params[:tag] %>
-  <div class="current-tag">
-    Showing notes tagged with: #<%= params[:tag] %>
-    <%= link_to "Clear filter", notes_path, class: "clear-filter" %>
+  <div class="nav-links">
+    <%= link_to "All Notes", notes_path %> |
+    <%= link_to "Starred Notes", starred_notes_path %>
   </div>
-<% end %>
 
-<div id="notes">
-  <% @notes.group_by { |note| note.created_at.to_date }.sort.reverse.each do |date, notes| %>
-    <h2><%= date.strftime("%B %d, %Y") %></h2>
-    
-    <div class="notes-for-date">
-      <% notes.each do |note| %>
-        <%= render note %>
-        <%= link_to note.created_at.strftime("%Y-%m-%d %H:%M:%S"), note, class: "permalink", title: "Permalink to this note" %>
-      <% end %>
+  <div class="search-form">
+    <%= form_with(url: notes_path, method: :get, local: true) do |f| %>
+      <%= f.text_field :q, 
+                       value: params[:q], 
+                       placeholder: "Search notes...",
+                       class: "search-input" %>
+      <%= f.submit "Search", class: "search-button" %>
+    <% end %>
+  </div>
+
+  <% if params[:q].present? %>
+    <div class="search-results">
+      Showing results for: "<%= params[:q] %>"
+      <%= link_to "Clear search", notes_path, class: "clear-search" %>
     </div>
   <% end %>
 </div>
-
-<div class="nav-links">
-  <%= link_to "All Notes", notes_path %> |
-  <%= link_to "Starred Notes", starred_notes_path %>
-</div>
-
-<div class="search-form">
-  <%= form_with(url: notes_path, method: :get, local: true) do |f| %>
-    <%= f.text_field :q, 
-                     value: params[:q], 
-                     placeholder: "Search notes...",
-                     class: "search-input" %>
-    <%= f.submit "Search", class: "search-button" %>
-  <% end %>
-</div>
-
-<% if params[:q].present? %>
-  <div class="search-results">
-    Showing results for: "<%= params[:q] %>"
-    <%= link_to "Clear search", notes_path, class: "clear-search" %>
-  </div>
-<% end %>

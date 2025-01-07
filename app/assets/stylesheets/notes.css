@@ -55,4 +55,29 @@
 
 .clear-search:hover {
   text-decoration: underline;
+}
+
+.embedded-note {
+  margin: 1rem 0;
+}
+
+.embedded-note blockquote {
+  margin: 0.5rem 0 0 1rem;
+  padding-left: 1rem;
+  border-left: 3px solid #ddd;
+  color: #666;
+}
+
+.reply-button {
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  margin-left: 0.5rem;
+}
+
+.reply-button:hover {
+  color: #000;
+  text-decoration: underline;
 } 
