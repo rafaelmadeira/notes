@@ -6,14 +6,7 @@ module NotesHelper
     formatted_content = formatted_content.gsub(/\A\[\[(\d+)\]\]/) do |match|
       note_id = $1
       if referenced_note = Note.find_by(id: note_id)
-        <<~HTML
-          <div class="embedded-note">
-            <a href="#{note_path(referenced_note)}">##{note_id}</a>
-            <blockquote>
-              #{simple_format(referenced_note.content)}
-            </blockquote>
-          </div>
-        HTML
+        render_embedded_note(referenced_note)
       else
         match
       end
@@ -57,5 +50,22 @@ module NotesHelper
       .map { |p| "<p>#{p}</p>" }
       .join
       .html_safe
+  end
+
+  private
+
+  def render_embedded_note(note)
+    <<~HTML
+      <div class="embedded-note" data-controller="embedded-note">
+        <div class="embedded-note-content" data-embedded-note-target="content" data-action="click->embedded-note#toggle">
+          #{format_note_content(note.content)}
+          <div class="embedded-note-footer">
+            <a href="#{note_path(note)}" class="embedded-note-timestamp">
+              #{time_ago_in_words(note.created_at)} ago
+            </a>
+          </div>
+        </div>
+      </div>
+    HTML
   end
 end
