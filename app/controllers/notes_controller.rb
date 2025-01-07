@@ -35,6 +35,8 @@ class NotesController < ApplicationController
 
   # GET /notes/1 or /notes/1.json
   def show
+    @note = Note.find(params[:id])
+    @referencing_notes = Note.referencing(@note.id).order(created_at: :desc)
   end
 
   # GET /notes/new

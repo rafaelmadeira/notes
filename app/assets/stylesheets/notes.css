@@ -1,8 +1,8 @@
-#notes h2:first-of-type {
+.date-header:first-of-type {
   display: none;
 }
 
-#notes h2 {
+.date-header {
     font-size: 1rem;
     font-weight: 500;
     text-align: center;
@@ -13,7 +13,7 @@
 /* Note Container */
 .note {
   position: relative;
-  padding: 1rem;
+  padding: 1.5rem;
   border: 1px solid #ddd;
   margin-bottom: 1rem;
   border-radius: 4px;
@@ -145,4 +145,51 @@ input[type="submit"]:disabled {
 
 .note-permalink {
   font-size: 0.875em;
+}
+
+/* Note Detail Page */
+.note-detail {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.referencing-notes {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #eee;
+}
+
+.referencing-notes h2 {
+  font-size: 1.2em;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+/* Headings in notes */
+.note h1 {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 1rem 0;
+  color: #333;
+}
+
+.note h2 {
+  font-size: 1.25em;
+  font-weight: bold;
+  margin: 1rem 0;
+  color: #444;
+}
+
+.note h3 {
+  font-size: 1.1em;
+  font-weight: bold;
+  margin: 1rem 0;
+  color: #555;
+}
+
+/* Highlighted text */
+.note mark {
+  background-color: #fff3b8;
+  padding: 0.1em 0.2em;
+  border-radius: 2px;
 }

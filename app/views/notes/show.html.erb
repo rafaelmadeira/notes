@@ -1,10 +1,16 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @note %>
-
-<div>
-  <%= link_to "Edit this note", edit_note_path(@note) %> |
+<p>
   <%= link_to "Back to notes", notes_path %>
+</p>
 
-  <%= button_to "Destroy this note", @note, method: :delete %>
+<div class="note-detail">
+  <%= render @note %>
 </div>
+
+<% if @referencing_notes.any? %>
+  <div class="referencing-notes">
+    <h2>Referenced by</h2>
+    <%= render @referencing_notes %>
+  </div>
+<% end %>

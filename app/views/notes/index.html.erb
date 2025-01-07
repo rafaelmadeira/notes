@@ -40,7 +40,7 @@
 
   <div id="notes">
     <% @notes.group_by { |note| note.created_at.to_date }.sort.reverse.each do |date, notes| %>
-      <h2><%= date.strftime("%B %d, %Y") %></h2>
+      <h2 class="date-header"><%= date.strftime("%B %d, %Y") %></h2>
       
       <div class="notes-for-date">
         <% notes.each do |note| %>
