@@ -1,4 +1,6 @@
-<div class="note" id="<%= dom_id(note) %>">
+<div class="note" 
+     id="<%= dom_id(note) %>" 
+     <%= 'data-controller=note-expand' unless local_assigns[:show_view] %>>
   <div class="note-header">
     <%= button_to toggle_star_note_path(note), 
                   class: "star-button #{note.starred ? 'starred' : ''}", 
@@ -7,11 +9,19 @@
       <%= note.starred ? "★" : "☆" %>
     <% end %>
   </div>
-  <div class="content">
+  <div class="content" <%= 'data-note-expand-target=content' unless local_assigns[:show_view] %>>
     <%= format_note_content(note.content) %>
   </div>
+  <% unless local_assigns[:show_view] %>
+    <button type="button" 
+            class="show-more-button" 
+            data-note-expand-target="button"
+            data-action="click->note-expand#toggle">
+      Show more
+    </button>
+  <% end %>
   <div class="note-actions">
-    <%= link_to format_timestamp(note.created_at), 
+    <%= link_to "##{note.id}", 
                 note_path(note),
                 class: "note-permalink" %>
     <button class="reply-button" data-note-id="<%= note.id %>" type="button">

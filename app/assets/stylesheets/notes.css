@@ -193,3 +193,55 @@ input[type="submit"]:disabled {
   padding: 0.1em 0.2em;
   border-radius: 2px;
 }
+
+/* Note content expansion */
+.note .content {
+  position: relative;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.note.expandable .content {
+  max-height: 360px;
+}
+
+.note.expanded .content {
+  max-height: none;
+}
+
+.note.expandable .content::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(to bottom, transparent, white);
+  pointer-events: none;
+}
+
+.note.expanded .content::after {
+  display: none;
+}
+
+.show-more-button {
+  display: none;
+  width: 100%;
+  padding: 0.5rem;
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  font-size: 0.9em;
+  text-align: center;
+  margin: 0.5rem 0;
+}
+
+.note.expandable .show-more-button {
+  display: block;
+}
+
+.show-more-button:hover {
+  color: #000;
+  text-decoration: underline;
+}

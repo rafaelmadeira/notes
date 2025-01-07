@@ -37,6 +37,7 @@ class NotesController < ApplicationController
   def show
     @note = Note.find(params[:id])
     @referencing_notes = Note.referencing(@note.id).order(created_at: :desc)
+    @show_view = true
   end
 
   # GET /notes/new

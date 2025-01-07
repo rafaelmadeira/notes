@@ -5,12 +5,12 @@
 </p>
 
 <div class="note-detail">
-  <%= render @note %>
-</div>
+  <%= render @note, show_view: true %>
 
-<% if @referencing_notes.any? %>
-  <div class="referencing-notes">
-    <h2>Referenced by</h2>
-    <%= render @referencing_notes %>
-  </div>
-<% end %>
+  <% if @referencing_notes.any? %>
+    <div class="referencing-notes">
+      <h2>Referenced by</h2>
+      <%= render @referencing_notes %>
+    </div>
+  <% end %>
+</div>
