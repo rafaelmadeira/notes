@@ -13,7 +13,7 @@
       Reply
     </button>
     <% if note.reference_count > 0 %>
-      <%= link_to "(#{note.reference_count})", 
+      <%= link_to "#{note.reference_count} #{note.reference_count == 1 ? 'reference' : 'references'}", 
                   notes_path(referencing: note.id),
                   class: "reference-count" %>
     <% end %>
