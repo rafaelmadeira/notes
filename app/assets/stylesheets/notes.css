@@ -183,6 +183,9 @@
   color: #666;
   text-decoration: underline;
 }
+.note .content p {
+  margin: 1rem 0;
+}
 
 .note .content p:first-of-type {
   margin-top: 0;
@@ -190,4 +193,15 @@
 
 input[type="submit"]:disabled {
   opacity: 0.5;
+}
+
+textarea {
+  min-height: 4rem;
+  resize: none;
+  overflow-y: hidden;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.5rem;
+  line-height: 1.5;
+  transition: height 0.1s ease-out;
 } 

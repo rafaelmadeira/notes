@@ -8,7 +8,7 @@ module NotesHelper
       if referenced_note = Note.find_by(id: note_id)
         <<~HTML
           <div class="embedded-note">
-            <a href="#{note_path(referenced_note)}">[#{note_id}]</a>
+            <a href="#{note_path(referenced_note)}">##{note_id}</a>
             <blockquote>
               #{simple_format(referenced_note.content)}
             </blockquote>
@@ -34,7 +34,7 @@ module NotesHelper
     formatted_content = formatted_content.gsub(/\[\[(\d+)\]\]/) do |match|
       note_id = $1
       if Note.exists?(note_id)
-        "<a href=\"#{note_path(note_id)}\">[#{note_id}]</a>"
+        "<a href=\"#{note_path(note_id)}\">##{note_id}</a>"
       else
         match
       end
@@ -46,7 +46,16 @@ module NotesHelper
       "<a href=\"#{notes_path(tag: tag)}\" class=\"tag\">##{tag}</a>"
     end
 
-    # Convert line breaks to HTML and make it safe
-    simple_format(formatted_content)
+    # Handle line breaks:
+    # 1. Replace double line breaks with temporary marker
+    # 2. Replace single line breaks with <br>
+    # 3. Replace markers with paragraphs
+    formatted_content
+      .gsub(/\n\n+/, "DOUBLE_BREAK")
+      .gsub(/\n/, "<br>")
+      .split("DOUBLE_BREAK")
+      .map { |p| "<p>#{p}</p>" }
+      .join
+      .html_safe
   end
 end
