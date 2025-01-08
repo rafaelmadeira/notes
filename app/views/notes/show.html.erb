@@ -10,7 +10,9 @@
   <% if @referencing_notes.any? %>
     <div class="referencing-notes">
       <h2>Referenced by</h2>
-      <%= render @referencing_notes %>
+      <%= render partial: "note", 
+                 collection: @referencing_notes, 
+                 locals: { current_note_id: @note.id } %>
     </div>
   <% end %>
 </div>

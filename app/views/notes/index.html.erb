@@ -55,6 +55,16 @@
     <%= link_to "Starred Notes", starred_notes_path %>
   </div>
 
+  <div class="sort-links">
+    Sort by:
+    <%= link_to "Recently Created", 
+                notes_path(sort: 'created_at', q: params[:q], tag: params[:tag], referencing: params[:referencing]),
+                class: "sort-link#{' active' if sort_column == 'created_at'}" %>
+    <%= link_to "Recently Updated", 
+                notes_path(sort: 'updated_at', q: params[:q], tag: params[:tag], referencing: params[:referencing]),
+                class: "sort-link#{' active' if sort_column == 'updated_at'}" %>
+  </div>
+
   <div class="search-form">
     <%= form_with(url: notes_path, method: :get, local: true) do |f| %>
       <%= f.text_field :q, 

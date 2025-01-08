@@ -7,9 +7,6 @@ export default class extends Controller {
     this.toggleSubmitButton()
     this.resizeTextarea()
     
-    // Resize after a brief delay to ensure content is loaded
-    setTimeout(() => this.resizeTextarea(), 10)
-    
     document.addEventListener('click', (event) => {
       if (event.target.classList.contains('reply-button')) {
         this.handleReply(event)
@@ -39,9 +36,18 @@ export default class extends Controller {
 
   resizeTextarea() {
     const textarea = this.inputTarget
+    const maxHeight = window.innerHeight * 0.8 // 80% of viewport height
+    
     // Reset height to auto to get the correct scrollHeight
     textarea.style.height = 'auto'
-    // Set the height to match the content
-    textarea.style.height = textarea.scrollHeight + 'px'
+    
+    // Get the scroll height (full content height)
+    const scrollHeight = textarea.scrollHeight
+    
+    // Set the height, but cap it at maxHeight
+    textarea.style.height = `${Math.min(scrollHeight, maxHeight)}px`
+    
+    // Show scrollbar if content exceeds maxHeight
+    textarea.style.overflowY = scrollHeight > maxHeight ? 'auto' : 'hidden'
   }
 } 

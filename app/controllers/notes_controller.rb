@@ -6,15 +6,15 @@ class NotesController < ApplicationController
   def index
     base_query = if params[:q].present?
       Note.where("content ILIKE ?", "%#{params[:q]}%")
-    elsif params[:tag]
-      Note.where("content LIKE ?", "%##{params[:tag]}%")
-    elsif params[:referencing]
+    elsif params[:tag].present?
+      Note.where("content ILIKE ?", "%##{params[:tag]}%")
+    elsif params[:referencing].present?
       Note.referencing(params[:referencing])
     else
       Note.all
     end
 
-    @notes = base_query.order(created_at: :desc)
+    @notes = base_query.order(sort_column => :desc)
     @note = Note.new
   end
 
@@ -98,5 +98,9 @@ class NotesController < ApplicationController
     # Only allow a list of trusted parameters through.
     def note_params
       params.require(:note).permit(:content, :starred)
+    end
+
+    def sort_column
+      %w[created_at updated_at].include?(params[:sort]) ? params[:sort] : 'created_at'
     end
 end

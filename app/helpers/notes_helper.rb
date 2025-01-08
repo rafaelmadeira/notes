@@ -1,12 +1,17 @@
 module NotesHelper
-  def format_note_content(content)
+  def format_note_content(content, current_note_id: nil)
     formatted_content = content.dup
 
     # First, handle full note embeds at the start
     formatted_content = formatted_content.gsub(/\A\[\[(\d+)\]\]/) do |match|
       note_id = $1
       if referenced_note = Note.find_by(id: note_id)
-        render_embedded_note(referenced_note)
+        # Skip rendering if this is the current note
+        if current_note_id && referenced_note.id == current_note_id
+          ""
+        else
+          render_embedded_note(referenced_note, current_note_id)
+        end
       else
         match
       end
@@ -132,14 +137,14 @@ module NotesHelper
 
   private
 
-  def render_embedded_note(note)
+  def render_embedded_note(note, current_note_id = nil)
     <<~HTML
       <div class="embedded-note" data-controller="embedded-note">
         <div class="embedded-note-content" data-embedded-note-target="content" data-action="click->embedded-note#toggle">
-          #{format_note_content(note.content)}
+          #{format_note_content(note.content, current_note_id: current_note_id)}
           <div class="embedded-note-footer">
-            <a href="#{note_path(note)}" class="embedded-note-timestamp" title="#{note.created_at.strftime("%Y-%m-%d %H:%M")}">
-              #{format_timestamp(note.created_at)}
+            <a href="#{note_path(note)}" class="embedded-note-timestamp">
+              #{time_ago_in_words(note.created_at)} ago
             </a>
           </div>
         </div>

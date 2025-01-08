@@ -245,3 +245,29 @@ input[type="submit"]:disabled {
   color: #000;
   text-decoration: underline;
 }
+
+/* Sort Links */
+.sort-links {
+  margin: 1rem 0;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.sort-link {
+  color: #666;
+  text-decoration: none;
+  margin-left: 1rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+.sort-link:hover {
+  background: #f5f5f5;
+  color: #000;
+}
+
+.sort-link.active {
+  background: #eee;
+  color: #000;
+  font-weight: 500;
+}

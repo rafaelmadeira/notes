@@ -10,7 +10,7 @@
     <% end %>
   </div>
   <div class="content" <%= 'data-note-expand-target=content' unless local_assigns[:show_view] %>>
-    <%= format_note_content(note.content) %>
+    <%= format_note_content(note.content, current_note_id: local_assigns[:current_note_id]) %>
   </div>
   <% unless local_assigns[:show_view] %>
     <button type="button" 
